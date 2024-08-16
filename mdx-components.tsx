@@ -1,9 +1,21 @@
 import type { MDXComponents } from 'mdx/types';
-import { Heading } from '@/components/heading';
+import { H1 as h1 } from '@/components/h1';
+import { H2 as h2 } from '@/components/h2';
+import { H3 as h3 } from '@/components/h3';
+import { Code as code } from '@/components/code';
+import { Blockquote as blockquote } from '@/components/blockquote';
+import {Pre as pre} from '@/components/pre';
+import { P as p } from './components/p';
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
-    h1: Heading,
+    h1,
+    h2,
+    h3,
+    code,
+    blockquote,
+    pre,
+    p,
     ...components,
   };
 }
