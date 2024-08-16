@@ -7,7 +7,7 @@ export function Posts({ posts }: { posts: Post[] }) {
       {posts.map(({ slug, title, publishDate }) => (
         <li key={slug}>
           <h2>
-            <Link href={`/${slug}`}>{title}</Link>
+            <Link href={`/blog/${slug}`}>{title}</Link>
           </h2>
           <p>
             <strong>Published:</strong>{' '}
