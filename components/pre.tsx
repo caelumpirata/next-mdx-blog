@@ -10,6 +10,8 @@ export function Pre(props: ComponentPropsWithoutRef<'pre'>) {
         text-sm
         bg-gray-800 text-white
         dark:bg-[#222] dark:text-gray-300
+        overflow-x-auto 
+        
       `}
 
         {...props}>
