@@ -1,7 +1,6 @@
 import { notFound } from 'next/navigation'
 import { Metadata } from 'next'
-import ViewCounter from '@/components/ViewCounter'
-import { redis } from '@/lib/redis'
+import { getPostData, getAllPostSlugs } from '../../../lib/posts'
 
 interface PostProps {
   params: {
@@ -9,35 +8,31 @@ interface PostProps {
   }
 }
 
+export async function generateStaticParams() {
+  const paths = getAllPostSlugs()
+  return paths
+}
+
 export async function generateMetadata({ params }: PostProps): Promise<Metadata> {
   try {
-    const post = await import(`../${params.slug}.mdx`)
+    const post = await getPostData(params.slug)
     return { 
-      title: post.metadata.title,
-      description: `This is the page for ${post.metadata.title}`
+      title: post.title,
+      description: `This is the page for ${post.title}`
     }
   } catch (error) {
-    console.error(error)
     return { title: 'Post Not Found' }
   }
 }
 
 export default async function Post({ params }: PostProps) {
   try {
+    const post = await getPostData(params.slug)
     const PostContent = (await import(`../${params.slug}.mdx`)).default
-    const views = await redis.get<number>(`pageviews:${params.slug}`) || 0
-    const { metadata } = await import(`../${params.slug}.mdx`)
-
     return (
-      <article className="max-w-2xl mx-auto p-4">
-        <h1 className="text-3xl font-bold mb-2">{metadata.title}</h1>
-        <div className="flex justify-between items-center mb-6 text-sm text-gray-600">
-          <span>{metadata.date}</span>
-          <ViewCounter slug={params.slug} initialViews={views} />
-        </div>
-        <div className="prose max-w-none">
-          <PostContent />
-        </div>
+      <article>
+        <h1>{post.title}</h1>
+        <PostContent />
       </article>
     )
   } catch (error) {
