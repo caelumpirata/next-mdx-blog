@@ -1,20 +1,22 @@
 import fs from 'fs'
 import path from 'path'
+import { redis } from './redis'
 
 export interface Post {
   slug: string
   title: string
   date: string
+  views: number
 }
 
 const postsDirectory = path.join(process.cwd(), 'app/blog')
 
-export function getSortedPostsData(): Post[] {
+export async function getSortedPostsData(): Promise<Post[]> {
   // Get file names under /app/blog
   const fileNames = fs.readdirSync(postsDirectory)
-  const allPostsData = fileNames
+  const allPostsData = await Promise.all(fileNames
     .filter(fileName => fileName.endsWith('.mdx'))
-    .map((fileName): Post => {
+    .map(async (fileName): Promise<Post> => {
       // Remove ".mdx" from file name to get slug
       const slug = fileName.replace(/\.mdx$/, '')
 
@@ -29,13 +31,17 @@ export function getSortedPostsData(): Post[] {
       }
       const metadata = eval(`(${metadataMatch[1]})`)
 
-      // Combine the data with the slug
+      // Get view count from Redis
+      const views = await redis.get<number>(`pageviews:${slug}`) || 0
+
+      // Combine the data with the slug and views
       return {
         slug,
         title: metadata.title,
         date: metadata.date,
+        views
       }
-    })
+    }))
 
   // Sort posts by date
   return allPostsData.sort((a, b) => (a.date < b.date ? 1 : -1))
