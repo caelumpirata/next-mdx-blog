@@ -1,20 +1,12 @@
-import { Posts } from '@/components/posts';
-import { getPosts } from '@/app/posts';
-import type { Metadata } from "next";
+import { getSortedPostsData } from '../../lib/posts'
+import PostList from '../../components/PostList'
 
-
-
-export const metadata: Metadata = {
-  title: "Caelum Pirata's blog",
-  description: "SWE",
-};
-
-export default async function Home() {
-  const posts = await getPosts();
-
+export default function BlogPage() {
+  const posts = getSortedPostsData()
   return (
-    <main>
-      <Posts posts={posts} />
-    </main>
-  );
+    <div>
+      {/* <h1 className="text-2xl font-bold mb-1 dark:text-gray-100" >Blog</h1> */}
+      <PostList posts={posts} />
+    </div>
+  )
 }
