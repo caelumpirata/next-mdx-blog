@@ -5,7 +5,7 @@ export function Pre(props: ComponentPropsWithoutRef<'pre'>) {
     <pre 
     
     className={`
-        rounded
+        rounded-lg
         p-4
         text-sm
         bg-gray-800 text-white

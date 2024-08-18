@@ -5,7 +5,7 @@ import Link from "next/link";
 export function Logo() {
   const pathname = usePathname();
   return (
-    <span className=" ml-4 text-xs  whitespace-nowrap ">
+    <span className=" ml-4 text-xs  whitespace-nowrap dark:text-[#EFEFEF] ">
       {pathname === "/" ? (
         <span className="cursor-default pr-2">CAELUM PIRATA®</span>
       ) : (
