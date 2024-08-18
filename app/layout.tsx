@@ -18,7 +18,7 @@ export default function RootLayout({children,}: Readonly<{children: React.ReactN
     className={`${inter.className} antialiased`}
   >
     <body className="dark:text-gray-100 max-w-2xl m-auto">
-      <main className="p-6 pt-3 md:pt-6 min-h-screen">
+      <main className="py-4  pt-3 md:pt-6 min-h-screen">
       <Header />
 
         {children}

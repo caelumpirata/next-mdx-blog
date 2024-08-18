@@ -5,7 +5,7 @@ import { Logo } from "./logo";
 
 export function Header() {
   return (
-    <header className="flex mb-5 md:mb-10 items-center">
+    <header className=" py-2 border border-fake-grey rounded-lg flex mb-5 md:mb-10 items-center">
       <Logo />
 
       <nav className="font-mono text-xs grow justify-end items-center flex gap-1 md:gap-3">
@@ -14,15 +14,15 @@ export function Header() {
           href="/blog"
           className="inline-flex hover:bg-gray-200 dark:hover:bg-[#313131] active:bg-gray-300 dark:active:bg-[#242424] rounded-sm p-2 transition-[background-color]"
         >
-          Blog
+          BLOG
         </Link>
         <a
           href="https://twitter.com/caelumpirata"
           target="_blank"
-          className="inline-flex hover:bg-gray-200 dark:hover:bg-[#313131] active:bg-gray-300 dark:active:bg-[#242424] items-center p-2 rounded-sm transition-[background-color] whitespace-nowrap -mr-2"
+          className=" mr-4 inline-flex hover:bg-gray-200 dark:hover:bg-[#313131] active:bg-gray-300 dark:active:bg-[#242424] items-center rounded-sm transition-[background-color] whitespace-nowrap -mr-2"
         >
-          <TweetIcon style={{ marginRight: 4 }} /> Follow{" "}
-          <span className="hidden md:inline">&nbsp;me</span>
+          <TweetIcon style={{ marginRight: 4 }} /> FOLLOW{" "}
+          <span className="hidden md:inline">&nbsp;ME</span>
         </a>
       </nav>
     </header>

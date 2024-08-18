@@ -30,9 +30,12 @@ export default async function Post({ params }: PostProps) {
     const post = await getPostData(params.slug)
     const PostContent = (await import(`../${params.slug}.mdx`)).default
     return (
-      <article>
-        <h1>{post.title}</h1>
-        <PostContent />
+      <article className="prose lg:prose-xl dark:prose-invert mx-auto">
+        <h1 className="text-base">{post.title}</h1>
+        <p className="text-gray-600 text-sm dark:text-gray-400 mb-8">{post.formattedDate}</p>
+        <div className="mt-8 [&>h1:first-child]:hidden text-sm">
+          <PostContent />
+        </div>
       </article>
     )
   } catch (error) {

@@ -9,8 +9,9 @@ export function Pre(props: ComponentPropsWithoutRef<'pre'>) {
         p-4
         text-sm
         bg-gray-800 text-white
-        dark:bg-[#222] dark:text-gray-300
+        dark:bg-[#000] dark:text-gray-300
         overflow-x-auto 
+        border border-fake-grey
         
       `}
 
