@@ -28,7 +28,9 @@ export async function generateMetadata({ params }: PostProps): Promise<Metadata>
 export default async function Post({ params }: PostProps) {
   try {
     const post = await getPostData(params.slug)
-    const PostContent = (await import(`../${params.slug}.mdx`)).default
+    // const PostContent = (await import(`../${params.slug}.mdx`)).default
+    const PostContent = (await import(`../../../posts/${params.slug}.mdx`)).default //moving all the posts outside /app/blog
+
     return (
       <article className="prose lg:prose-xl dark:prose-invert mx-auto">
         <h1 className="text-base">{post.title}</h1>
