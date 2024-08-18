@@ -5,7 +5,7 @@ export function Header() {
   return (
     <header className="fixed inset-x-0 top-0 z-[9999] pt-4 pb-4">
       <div className="max-w-3xl mx-auto px-2">
-        <div className="py-2 border dark:border-fake-grey border-[#e0e0e0] rounded-lg dark:bg-black">
+        <div className="py-2 border dark:border-fake-grey border-[#e0e0e0] rounded-lg bg-white dark:bg-black">
           <div className="flex flex-wrap items-center justify-between">
             <Logo />
             <nav className="font-mono text-xs flex items-center gap-2 sm:gap-4">
