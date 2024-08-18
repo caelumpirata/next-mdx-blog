@@ -5,6 +5,7 @@ export function Li(props: ComponentPropsWithoutRef<'li'>) {
     <li 
     
     className={`
+        mx-4
         my-2
         [ul_&]:relative
         [ul_&]:pl-4

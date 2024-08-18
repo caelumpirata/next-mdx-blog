@@ -11,7 +11,7 @@ export default function BlogPage() {
   const posts = getSortedPostsData()
   return (
     <div>
-      <h1 className="text-base	 mb-8">Blog</h1>
+      <h1 className="text-base	mx-4  mb-8">Blog</h1>
       <ul className='flex flex-col gap-6 place-items-stretch'>
         {posts.map((post) => (
           <li key={post.slug} className="bg-white dark:bg-black rounded-lg shadow-md overflow-hidden border border-fake-grey">

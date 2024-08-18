@@ -33,8 +33,8 @@ export default async function Post({ params }: PostProps) {
 
     return (
       <article className="prose lg:prose-xl dark:prose-invert mx-auto">
-        <h1 className="text-base">{post.title}</h1>
-        <p className="text-gray-600 text-sm dark:text-gray-400 mb-8">{post.formattedDate}</p>
+        <h1 className="mx-4 text-base">{post.title}</h1>
+        <p className="mx-4 ext-gray-600 text-sm dark:text-gray-400 mb-8">{post.formattedDate}</p>
         <div className="mt-8 [&>h1:first-child]:hidden text-sm">
           <PostContent />
         </div>
