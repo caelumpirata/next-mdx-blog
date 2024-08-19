@@ -7,6 +7,7 @@ import { Blockquote as blockquote } from '@/components/blockquote';
 import {Pre as pre} from '@/components/pre';
 import { P as p } from './components/p';
 import { Li as li } from './components/li';
+import { A as a } from './components/a';
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
@@ -18,6 +19,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     pre,
     p,
     li,
+    a,
     ...components,
   };
 }

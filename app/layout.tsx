@@ -17,14 +17,14 @@ export default function RootLayout({children,}: Readonly<{children: React.ReactN
       lang="en"
       className={`${inter.className} antialiased`}
     >
-      <body className="dark:text-gray-100 min-h-screen">
-        <div className="max-w-3xl mx-auto px-2 py-4 md:pt-[8rem] pt-[8rem]">
+      <body className="dark:text-gray-100 min-h-screen max-w-3xl mx-auto px-2 py-4 md:pt-[8rem] pt-[8rem]">
+        {/* <div className=""> */}
           <Header />
           <main>
             {children}
             {/* <Footer /> */}
           </main>
-        </div>
+        {/* </div> */}
       </body>
     </html>
   );
