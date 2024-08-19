@@ -8,7 +8,7 @@ export function Header() {
         <div className="py-2 border dark:border-fake-grey border-[#e0e0e0] rounded-lg bg-white dark:bg-black">
           <div className="flex flex-wrap items-center justify-between">
             <Logo />
-            <nav className="font-mono text-xs flex items-center gap-2 sm:gap-4">
+            <nav className="font-mono text-xs flex items-center gap-2 sm:gap-4 mr-2">
               <Link
                 href="/blog"
                 className="inline-flex hover:bg-gray-200 dark:hover:bg-[#313131] active:bg-gray-300 dark:active:bg-[#242424] rounded-sm p-2 transition-[background-color]"

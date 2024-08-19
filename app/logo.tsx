@@ -7,13 +7,13 @@ export function Logo() {
   return (
     <span className=" ml-4 text-xs  whitespace-nowrap dark:text-[#EFEFEF] ">
       {pathname === "/" ? (
-        <span className="cursor-default pr-2">CAELUM PIRATA®</span>
+        <span className="cursor-default pr-2">AKASH SINGH</span>
       ) : (
         <Link
           href="/"
           className="hover:bg-gray-200 dark:hover:bg-[#313131] active:bg-gray-300 dark:active:bg-[#242424] p-2 rounded-sm -ml-2 transition-[background-color]"
         >
-          CAELUM PIRATA®
+          AKASH SINGH
 
         </Link>
       )}
