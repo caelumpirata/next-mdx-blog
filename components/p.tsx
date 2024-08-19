@@ -2,5 +2,5 @@ import { type ComponentPropsWithoutRef } from 'react';
 
 
 export function P(props: ComponentPropsWithoutRef<'p'>) {
-    return <p className=" mx-4  my-5 [blockquote_&]:my-2 text-base dark:text-[#EFEFEF]" {...props} />;
+    return <p className=" mx-4  my-5 [blockquote_&]:my-2 text-sm dark:text-[#EFEFEF]" {...props} />;
   }

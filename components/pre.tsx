@@ -8,10 +8,10 @@ export function Pre(props: ComponentPropsWithoutRef<'pre'>) {
         rounded-lg
         p-4
         text-sm
-        bg-gray-800 text-white
         dark:bg-[#000] dark:text-gray-300
         overflow-x-auto 
-        border border-fake-grey
+        border border-[#e0e0e0]
+        dark:border-fake-grey
         
       `}
 
