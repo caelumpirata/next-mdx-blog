@@ -3,30 +3,30 @@ import { Logo } from "./logo";
 
 export function Header() {
   return (
-    <header className="fixed inset-x-0 top-0 z-[9999] pt-4 pb-4">
-      <div className="max-w-3xl mx-auto px-2">
-        <div className="py-2 border dark:border-fake-grey border-[#e0e0e0] rounded-lg bg-white dark:bg-black">
-          <div className="flex flex-wrap items-center justify-between">
+    <header className="header grid grid-fixed">
+      <div className="header-content bordered md:mx-2">
+        {/* <div className="py-2 border dark:border-fake-grey border-[#e0e0e0] rounded-lg bg-white dark:bg-black"> */}
+          {/* <div className="flex flex-wrap items-center justify-between"> */}
             <Logo />
-            <nav className="font-mono  flex items-center gap-2 sm:gap-4 mr-2">
+            <nav className="font-mono flex items-center gap-2 sm:gap-4 justify-end">
               <Link
                 href="/blog"
-                className="inline-flex hover:bg-gray-200 dark:hover:bg-[#313131] active:bg-gray-300 dark:active:bg-[#242424] rounded-sm transition-[background-color]"
+                className="header-button"
               >
-                BLOg
+                BLOG
               </Link>
               <a
                 href="https://twitter.com/caelumpirata"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex hover:bg-gray-200 dark:hover:bg-[#313131] active:bg-gray-300 dark:active:bg-[#242424] items-center rounded-sm transition-[background-color] whitespace-nowrap"
+                className="inline-flex  active:bg-gray-300 dark:active:bg-[#242424] items-center rounded-sm transition-[background-color] whitespace-nowrap header-button"
               >
                 <TweetIcon style={{ marginRight: 4 }} /> FOLLOW
                 <span className="hidden sm:inline">&nbsp;ME</span>
               </a>
             </nav>
-          </div>
-        </div>
+          {/* </div>
+        </div> */}
       </div>
     </header>
   );

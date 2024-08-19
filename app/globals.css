@@ -61,3 +61,191 @@ body {
     padding: 8rem 0;
   }
 }
+
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+  background: var(--background);
+  opacity: 0;
+  transition-property: opacity;
+  z-index: 50;
+}
+
+.grid {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  display: grid;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+@media (min-width: 670px) {
+  .grid {
+    gap: 1.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+.grid-flexible {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+@media (min-width: 670px) {
+  .grid-flexible {
+    grid-template-columns: repeat(auto-fit, 15rem);
+  }
+}
+
+.grid-fixed {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+@media (min-width: 670px) {
+  .grid-fixed {
+    grid-template-columns: repeat(2, 15rem);
+  }
+}
+
+@media (min-width: 1000px) {
+  .grid-fixed {
+    grid-template-columns: repeat(3, 15rem);
+  }
+}
+
+.bordered {
+  outline: 1px solid var(--border);
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+}
+
+.bordered-hover {
+  transition-property: outline;
+}
+
+.bordered-hover:hover,
+.grid-shop-item .grid-item-content:hover .grid-item-overlay {
+  outline: 1px solid var(--text);
+}
+
+.button {
+  font-size: 12px;
+  line-height: 18px;
+  cursor: pointer;
+  border-radius: 0.25rem;
+}
+
+@media (min-width: 2000px) {
+  .button {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+.tags {
+  display: flex;
+  gap: 0.25rem;
+  flex-wrap: wrap;
+}
+
+.tag {
+  font-size: 12px;
+  line-height: 18px;
+  background: var(--background-alt);
+  padding: 1px 0.3rem;
+  border-radius: 9999px;
+  color: var(--text-alt);
+}
+
+@media (min-width: 2000px) {
+  .tag {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+.header {
+  z-index: 9999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.header-content {
+  grid-column: 1/-1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  background: var(--background);
+  flex-wrap: wrap;
+  position: relative;
+}
+
+@media (min-width: 450px) {
+  .header-content {
+    grid-template-columns: repeat(2, 0fr);
+  }
+}
+
+@media (min-width: 1000px) {
+  .header-content {
+    grid-column: span 3;
+    /* grid-template-columns: subgrid; */
+  }
+}
+
+@media (max-width: 449px) {
+  :is(#grid, #shop) .header-content {
+    grid-template-columns: 1fr auto auto;
+    justify-content: start;
+  }
+
+  :is(#grid, #shop) .header-content .grid-button {
+    margin-left: auto;
+  }
+}
+
+.header-button {
+  font-size: 12px;
+  line-height: 18px;
+  border: 0;
+  padding: 0.25rem 0.5rem;
+  margin: 1px 0;
+  transition-property: background;
+  text-align: center;
+  justify-self: end;
+  border-radius: 0.25rem;
+  margin-right: 0.25rem;
+  cursor: pointer;
+}
+
+@media (min-width: 2000px) {
+  .header-button {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+@media (min-width: 450px) {
+  .header-button {
+    justify-self: center;
+  }
+}
+
+.header-button:focus-visible {
+  outline: 1px solid var(--text);
+}
+
+.header-button:hover {
+  background: var(--background-alt);
+}
