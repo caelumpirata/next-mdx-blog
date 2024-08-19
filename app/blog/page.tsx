@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function BlogPage() {
   const posts = getSortedPostsData()
   return (
-    <div>
+    <div className='mx-2'>
       <h1 className="	mx-4  mb-8">Blog</h1>
       <ul className='flex flex-col gap-6 '>
         {posts.map((post) => (

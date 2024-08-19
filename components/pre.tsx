@@ -11,6 +11,7 @@ export function Pre(props: ComponentPropsWithoutRef<'pre'>) {
         overflow-x-auto 
         border border-[#e0e0e0]
         dark:border-fake-grey
+        mb-8
         
       `}
 

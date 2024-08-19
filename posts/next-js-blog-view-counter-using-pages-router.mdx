@@ -1,15 +1,15 @@
 export const metadata = {
-  title: "Next.js Blog View Counter: Using Pages Router",
-  description:
-    "This guide provides a simple, step-by-step approach to implement real-time page view tracking, enhancing user interaction and insights.",
-  date: "2023-11-15",
+
+title: "Next.js Blog View Counter: Using Pages Router",
+description: "This guide provides a simple, step-by-step approach to implement real-time page view tracking, enhancing user interaction and insights.",
+date: '2023-11-15',
 };
 
 This guide provides a simple, step-by-step approach to implement real-time page view tracking, enhancing user interaction and insights.
 
 ## Prerequisites
 
-1. create an account on [UpStash](https://console.upstash.com/login)
+1. create an account on <Link href="https://console.upstash.com/login" target="_blank" rel="noopener noreferrer">UpStash</Link>
 2. create database (you can create one database in free tier)
 3. go to your database (choose @upstash/redis tab), we will need them after.
 
@@ -54,7 +54,7 @@ export default async function handler(req, res) {
   };
 ```
 
-you can visit [http://localhost:3000/api/redis](http://localhost:3000/api/redis) to check if its working.
+you can visit <Link href="http://localhost:3000/api/redis" target="_blank" rel="noopener noreferrer">http://localhost:3000/api/redis</Link> to check if its working.
 
 everytime you refresh, the counter values will increase.
 
@@ -94,8 +94,8 @@ function Post() {
 export default Post;
 ```
 
-Visit [http://localhost:3000/cat](http://localhost:3000/cat) and you will see the counter starts form 1 and the counter values persists in the database of UpStash.
+Visit <Link href="http://localhost:3000/cat" target="_blank" rel="noopener noreferrer">http://localhost:3000/cat</Link> and you will see the counter starts form 1 and the counter values persists in the database of UpStash.
 
 Go to database of upstash > Data Browser, and you will see the details of all the slugs on which the view counter is applied and for each slug saperate count is done.
 
-Similarly, visit [http://localhost:3000/dog](http://localhost:3000/dog) and the count values will be stored for this one too.
+Similarly, visit <Link href="http://localhost:3000/dog" target="_blank" rel="noopener noreferrer">http://localhost:3000/dog</Link>, and the count values will be stored for this one too.

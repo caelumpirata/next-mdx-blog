@@ -4,7 +4,7 @@ import { Logo } from "./logo";
 export function Header() {
   return (
     <header className="header grid grid-fixed">
-      <div className="header-content bordered md:mx-2">
+      <div className="header-content bordered">
         {/* <div className="py-2 border dark:border-fake-grey border-[#e0e0e0] rounded-lg bg-white dark:bg-black"> */}
           {/* <div className="flex flex-wrap items-center justify-between"> */}
             <Logo />

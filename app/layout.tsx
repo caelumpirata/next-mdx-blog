@@ -17,9 +17,9 @@ export default function RootLayout({children,}: Readonly<{children: React.ReactN
       lang="en"
       className={`${inter.className} antialiased`}
     >
-      <body className="dark:text-gray-100 min-h-screen max-w-3xl mx-auto px-2 py-4 md:pt-[8rem] pt-[6rem]">
+      <body className="dark:text-gray-100 min-h-screen max-w-3xl mx-auto py-4 md:pt-[8rem] pt-[6rem]">
           <Header />
-          <main>
+          <main className="md:mx-2">
             {children}
             {/* <Footer /> */}
           </main>

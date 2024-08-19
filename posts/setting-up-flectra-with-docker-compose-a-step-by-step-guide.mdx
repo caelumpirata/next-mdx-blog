@@ -1,0 +1,148 @@
+export const metadata = {
+  title: "Setting Up Flectra with Docker Compose: A Step-by-Step Guide",
+  description:
+    "Learn how to set up Flectra, an open-source ERP and CRM platform, using Docker Compose. This step-by-step guide covers everything from creating configuration files to launching and accessing your Flectra instance, making deployment simple and efficient.",
+  date: "2024-08-02",
+};
+
+Flectra is a powerful open-source ERP and CRM platform. In this guide, we'll walk through the process of setting up Flectra using Docker Compose, which simplifies the deployment and management of Flectra and its required PostgreSQL database.
+
+## Prerequisites
+
+Before we begin, make sure you have the following installed on your system:
+
+- Docker
+- Docker Compose
+
+## Step 1: Prepare the Configuration Files
+
+We'll need two main configuration files: `docker-compose.yml` and `flectra.conf`. Let's create them one by one.
+
+### docker-compose.yml
+
+Create a file named `docker-compose.yml` in your project directory with the following content:
+
+```yaml
+version: "3"
+services:
+  db:
+    image: postgres:15
+    environment:
+      - POSTGRES_USER=flectra
+      - POSTGRES_PASSWORD=flectra
+      - POSTGRES_DB=postgres
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    networks:
+      - flectra-network
+    ports:
+      - "5432:5432"
+
+  flectra:
+    image: flectrahq/flectra:3.0
+    depends_on:
+      - db
+    ports:
+      - "7073:7073"
+    environment:
+      - HOST=db
+      - USER=flectra
+      - PASSWORD=flectra
+    volumes:
+      - flectra-data:/var/lib/flectra
+      - ./flectra-server/addons:/mnt/extra-addons
+      - ./flectra.conf:/etc/flectra/flectra.conf:ro
+    user: "${UID}:${GID}"
+    networks:
+      - flectra-network
+
+volumes:
+  postgres-data:
+  flectra-data:
+
+networks:
+  flectra-network:
+    driver: bridge
+```
+
+### flectra.conf
+
+Next, create a file named `flectra.conf` in the same directory with the following content:
+
+```ini
+[options]
+addons_path = /opt/flectra/server/flectra/addons,/opt/flectra/server/addons,/mnt/extra-addons
+data_dir = /var/lib/flectra
+db_host = db
+db_port = 5432
+db_user = flectra
+db_password = flectra
+log_level = info
+admin_passwd = admin
+```
+
+## Step 2: Set Up Environment Variables
+
+Before running Docker Compose, we need to set the `UID` and `GID` environment variables. Open a terminal and run:
+
+```bash
+export UID=$(id -u)
+export GID=$(id -g)
+```
+
+## Step 3: Create Required Directories and Volumes
+
+Create a directory for custom addons:
+
+```bash
+mkdir -p flectra-server/addons
+```
+
+Create the necessary Docker volumes:
+
+```bash
+docker volume create postgres-data
+docker volume create flectra-data
+docker volume create flectra-addons
+docker volume create flectra-filestore
+```
+
+## Step 4: Start the Containers
+
+Now that everything is set up, we can start our Flectra and PostgreSQL containers:
+
+```bash
+docker-compose up -d
+```
+
+This command will download the necessary images (if they're not already present), create the containers, and start them in detached mode.
+
+## Step 5: Verify the Setup
+
+To check if the containers are running correctly, use:
+
+```bash
+docker-compose ps
+```
+
+You should see two containers (flectra and db) in the "Up" state.
+
+To view the logs of the Flectra container:
+
+```bash
+docker-compose logs flectra
+```
+
+## Accessing Flectra
+
+If everything has started correctly, you should now be able to access Flectra by opening a web browser and navigating to:
+
+`http://localhost:7073`
+
+You'll be greeted with the Flectra setup page where you can create your first database and start using Flectra.
+
+## Conclusion
+
+You've successfully set up Flectra using Docker Compose! This setup provides a isolated environment for Flectra and its database, making it easy to manage and deploy. Remember to back up your data regularly and keep your containers updated for the best performance and security.
+
+Happy Flectra-ing!
