@@ -8,6 +8,7 @@ import {Pre as pre} from '@/components/pre';
 import { P as p } from './components/p';
 import { Li as li } from './components/li';
 import { A as a } from './components/a';
+import { Img as img } from './components/img';
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
@@ -20,6 +21,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     p,
     li,
     a,
+    img,
     ...components,
   };
 }

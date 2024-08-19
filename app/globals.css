@@ -2,32 +2,62 @@
 @tailwind components;
 @tailwind utilities;
 
-/* :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-} */
+:root {
+  --c-bg: hsl(0, 0%, 100%);
+  --c-text: hsl(0, 0%, 10%);
+  --text-alt: hsl(0, 0%, 45%);
+  --text: #000;
+  --text-alt-inverted: #a3a3a3;
+  --text-inverted: #fff;
+  --background-alt: #f7f7f7;
+  --background: #fff;
+  --background-visited: hsl(0, 0%, 98%);
+  --background-alt-inverted: #444444;
+  --background-inverted: #000000;
+  --border: #e0e0e0;
+  --avatar: #e0e0e0;
+  --f-family: "Inter", sans-serif;
+  --f-size: 14px;
+  --f-height: 20px;
+  --f-weight: 400;
+  font-size: var(--f-height);
+  font-family: var(--f-family);
+  font-weight: var(--f-weight);
+  background: var(--background);
+  color: var(--text);
+}
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --text-alt: #a3a3a3;
+    --text: #efefef;
+    --text-alt-inverted: #a3a3a3;
+    --text-inverted: #000;
+    --background-alt: #262626;
+    --background: #000;
+    --background-visited: hsl(0, 0%, 5%);
+    --background-alt-inverted: #f7f7f7;
+    --background-inverted: #fff;
+    --border: #444;
+    --avatar: #111;
+  }
+}
+
+@media (min-width: 2000px) {
+  :root {
+    --f-size: 16px;
+    --f-height: 24px;
   }
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  font-size: var(--f-size);
+  line-height: var(--f-height);
+  padding: 6rem 0 0;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+@media (min-width: 1000px) {
+  body {
+    padding: 8rem 0;
   }
 }

@@ -8,18 +8,18 @@ export function Header() {
         <div className="py-2 border dark:border-fake-grey border-[#e0e0e0] rounded-lg bg-white dark:bg-black">
           <div className="flex flex-wrap items-center justify-between">
             <Logo />
-            <nav className="font-mono text-xs flex items-center gap-2 sm:gap-4 mr-2">
+            <nav className="font-mono  flex items-center gap-2 sm:gap-4 mr-2">
               <Link
                 href="/blog"
-                className="inline-flex hover:bg-gray-200 dark:hover:bg-[#313131] active:bg-gray-300 dark:active:bg-[#242424] rounded-sm p-2 transition-[background-color]"
+                className="inline-flex hover:bg-gray-200 dark:hover:bg-[#313131] active:bg-gray-300 dark:active:bg-[#242424] rounded-sm transition-[background-color]"
               >
-                BLOG
+                BLOg
               </Link>
               <a
                 href="https://twitter.com/caelumpirata"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex hover:bg-gray-200 dark:hover:bg-[#313131] active:bg-gray-300 dark:active:bg-[#242424] items-center rounded-sm p-2 transition-[background-color] whitespace-nowrap"
+                className="inline-flex hover:bg-gray-200 dark:hover:bg-[#313131] active:bg-gray-300 dark:active:bg-[#242424] items-center rounded-sm transition-[background-color] whitespace-nowrap"
               >
                 <TweetIcon style={{ marginRight: 4 }} /> FOLLOW
                 <span className="hidden sm:inline">&nbsp;ME</span>
