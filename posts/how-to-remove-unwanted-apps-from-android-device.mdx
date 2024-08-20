@@ -11,13 +11,7 @@ Follow these steps to remove the unwanted apps from you Android Device easily.
 
 1. Computer
 2. Usb Cable
-3. <Link
-     href="https://developer.android.com/tools/releases/platform-tools"
-     target="_blank"
-     rel="noopener noreferrer"
-   >
-     SDK Platform Tools
-   </Link>
+3. [SDK Platform Tools](https://developer.android.com/tools/releases/platform-tools)
 
 ## 1. Connect your Android Device with ADB
 
@@ -33,13 +27,7 @@ Inside `DEBUGGING` section, Enable Android Debugging.
 Now,
 Extract the `.zip` file you downloaded and navigate to `platform-tools` and open `cmd` in that directory.
 
-    <Image
-      src="/cmd.webp"
-      alt="how to open cmd in current directory"
-      width={1280}
-      height={720}
-      priority={true}
-    />
+![how to open cmd in current directory](/images/cmd.webp)
 
 run the following command
 
@@ -64,23 +52,10 @@ pm list packages
 2. Uninstalling the Apps
    To uninstall the apps, we will need the exact package name of the app.
    `App info` shows the package name
-   <Image
-         src="/app_info.webp"
-         alt="find package name in app info"
-         width={1280}
-         height={720}
-         priority={true}
-       />
-   or,
-   you can download this to get the package name
+   ![find package name in app info](/images/app_info.webp)
+   or, you can download this to get the package name
 
-<Link
-  href="https://play.google.com/store/apps/details?id=com.ubqsoft.sec01&hl=en_US"
-  target="_blank"
-  rel="noopener noreferrer"
->
-  App Inspector - Apps on Google Play
-</Link>
+[App Inspector - Apps on Google Play](https://play.google.com/store/apps/details?id=com.ubqsoft.sec01&hl=en_US)
 
 run this command to delete the app
 
@@ -89,12 +64,7 @@ pm uninstall -k --user 0 NameOfPackage
 ```
 
 in my case it is `org.lineage0s.audiofx`
-<Image
-      src="/uninstall.webp"
-      alt="uninstalled package"
-      width={1280}
-      height={720}
-      priority={true}
-    />
+
+![uninstall package](/images/uninstall.webp)
 
 Thank you 😋

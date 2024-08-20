@@ -43,7 +43,7 @@ Apply in all the nodes(master + worker + edgenode) for seamless, socks5 connecti
 sudo ufw default allow
 ```
 
-Install a <Link href="https://kubesphere.io/docs/v3.3/installing-on-linux/introduction/multioverview/" target="_blank" rel="noopener noreferrer">Multi-node Kubernetes and KubeSphere Cluster</Link>
+Install a [Multi-node Kubernetes and KubeSphere Cluster](https://kubesphere.io/docs/v3.3/installing-on-linux/introduction/multioverview/)
 
 You can use the web kubectl to check the installation process by executing the following command:
 
@@ -53,14 +53,7 @@ kubectl logs -n kubesphere-system $(kubectl get pod -n kubesphere-system -l 'app
 
 ## Configure the cloud (KubeEdge Master node)
 
-<Link
-  href="https://kubesphere.io/zh/blogs/kubesphere-kubeedge-edgemesh/#%E7%AE%80%E4%BB%8B"
-  target="_blank"
-  rel="noopener noreferrer"
->
-  Use KubeEdge and EdgeMesh to implement node communication in complex edge
-  network scenarios
-</Link>
+[Use KubeEdge and EdgeMesh to implement node communication in complex edge network scenarios](https://kubesphere.io/zh/blogs/kubesphere-kubeedge-edgemesh/#%E7%AE%80%E4%BB%8B)
 
 ### Enable KubeEdge
 
@@ -179,13 +172,7 @@ kubectl get pod -o wide -n kubeedge
 
 Add edge node documentation:
 
-<Link
-  href="https://kubesphere.io/docs/v3.3/installing-on-linux/cluster-operation/add-edge-nodes/"
-  target="_blank"
-  rel="noopener noreferrer"
->
-  Add Edge Nodes
-</Link>
+[Add Edge Nodes](https://kubesphere.io/docs/v3.3/installing-on-linux/cluster-operation/add-edge-nodes/)
 
 ### Install a container runtime
 
@@ -238,14 +225,7 @@ net.ipv4.ip_forward = 1
 
 > make sure to change `HIGHLIGHTED_PORT` to `30000`, `30001`, `30002`, `30004` and then run in your Edge_Node Droplet
 
-    <Image
-      src="/multinode-kubernetes-cluster-setup-with-edgenode/edgenode-join.webp"
-
-      alt="edgenode join"
-      width={1280}
-      height={720}
-      priority={true}
-    />
+![edgenode join](/images/edgenode-join.webp)
 
 now, run the edited command in your edge node.
 
@@ -281,14 +261,7 @@ done
 - run `chmod u+x deploy.sh` to make it executable.
 - run `./deploy.sh` and **boom**. Done
 
-> <Link
->   href="https://www.andrewcbancroft.com/blog/musings/make-bash-script-executable/"
->   target="_blank"
->   rel="noopener noreferrer"
-> >
->   Learn how to make bash script, enable execution and run it at the command
->   line.
-> </Link>
+> [Learn how to make bash script, enable execution and run it at the command line.](https://www.andrewcbancroft.com/blog/musings/make-bash-script-executable/)
 
 ## Collect Monitoring Information on Edge Nodes
 

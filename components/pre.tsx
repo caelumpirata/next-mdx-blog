@@ -3,7 +3,10 @@ import { type ComponentPropsWithoutRef } from 'react';
 export function Pre(props: ComponentPropsWithoutRef<'pre'>) {
   return (
     <pre 
-    
+    style={{
+      scrollbarWidth: 'none',        // For Firefox
+      msOverflowStyle: 'none',        // For Internet Explorer and Edge
+    }}
     className={`
         rounded-lg
         p-4
@@ -12,6 +15,7 @@ export function Pre(props: ComponentPropsWithoutRef<'pre'>) {
         border border-[#e0e0e0]
         dark:border-fake-grey
         mb-8
+        
         
       `}
 
